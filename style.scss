@@ -1,0 +1,45 @@
+$font-stack: 'Montserrat', sans-serif;
+
+// titles on page
+%title {
+	text-shadow: 3px 3px 3px #706d6c;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+
+html {
+	font-size: 18px;
+}
+
+body {
+	font: 1rem $font-stack;
+}
+
+.nav-link {
+	margin-left: auto;
+}
+
+#aboutMe {
+	margin-top: 1rem;
+}
+
+#aboutMeTitle, #projectsTitle, #contactTitle {
+	margin-top: 5rem;
+	@extend %title;
+}
+
+
+@media only screen and (min-width: 576px) {
+	
+	%title {
+		font-size: 40px;
+	}
+
+	body {
+		font-size: 1.25rem;
+	}
+
+
+}
