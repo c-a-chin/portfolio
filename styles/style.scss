@@ -1,0 +1,89 @@
+$font-stack: 'Montserrat', sans-serif;
+
+// titles on page
+%title {
+	text-shadow: 3px 3px 3px #706d6c;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+
+html {
+	font-size: 18px;
+}
+
+body {
+	font: 100% $font-stack;
+	background: #71C575;
+}
+
+nav {
+	border-radius: 5px;
+}
+.nav-link {
+	margin-left: auto;
+}
+
+#aboutMe, #contact {
+	margin-top: 1rem;
+	border-radius: 5px;
+}
+
+
+#aboutMeTitle, #projectsTitle, #contactTitle {
+	margin-top: 5rem;
+	@extend %title;
+}
+
+
+
+#links {
+	margin-top: 2rem;
+}
+
+
+i {
+	position: relative;
+	left: 25vw;
+	top: 2vh;
+	font-size: 20px;
+	max-width: 17.5px;
+}
+i:hover {
+	cursor: pointer;
+}
+// icon is for changing view of portfolio, has 4 breakpoints to line up with images under it
+@media (min-width: 576px) {
+	
+	%title {
+		font-size: 40px;
+	}
+
+	body {
+		font-size: 1.25rem;
+	}
+
+	i {
+		left: 145px;
+	}
+}
+
+@media (min-width: 767px) {
+	i {
+		font-size: 30px;
+		left: 223px;
+	}
+}
+
+@media (min-width: 992px) {
+	i {
+		left: 333px;
+	}
+}
+
+@media (min-width: 1200px) {
+	i {
+		left: 430px;
+	}
+}
