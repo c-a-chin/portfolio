@@ -25,13 +25,25 @@ nav {
 	margin-left: auto;
 }
 
+.anchor {
+	display: block;
+	position: relative;
+	top: -250px;
+	visibility: hidden;
+}
+#portfolioLink {
+	top: -115px;
+}
+#contactLink {
+	top: -115px;
+}
+
 #aboutMe, #contact {
 	margin-top: 1rem;
 	border-radius: 5px;
 }
 
-
-#aboutMeTitle, #projectsTitle, #contactTitle {
+#aboutMeTitle, #portfolioTitle, #contactTitle {
 	margin-top: 5rem;
 	@extend %title;
 }

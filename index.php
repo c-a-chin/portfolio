@@ -21,13 +21,13 @@
 	<div class="collapse navbar-collapse justify-content-center" id="navbarContent">
 		<ul class="navbar-nav mx-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="#">Home</a>
+				<a class="nav-link" href="#aboutLink">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Portfolio</a>
+				<a class="nav-link" href="#portfolioLink">Portfolio</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Contact</a>
+				<a class="nav-link" href="#contactLink">Contact</a>
 			</li>
 		</ul>
 	</div>
@@ -36,6 +36,7 @@
 
 
 <!-- MAIN CONTENT GRID -->
+<a class="anchor" id="aboutLink"></a> <!-- give in page anchors padding to account for fixed header -->
 <div class="container">
 	<div id="aboutMeTitle" align="center">About Me</div>
 	<div class="row"> <!-- ABOUT ME -->
@@ -50,16 +51,19 @@
 	</div> <!-- END ABOUT ME -->
 
 
+
 	<!-- PORTFOLIO -->
 	<!-- 2 VIEWS FOR PORTFOLIO - CAROUSEL AND LIST -->
 	<!-- FOR PREVIEWS IN CAROUSEL, CLICKING ON PREVIEW BRINGS UP MODAL -->
 	<!-- LIST VIEW LISTS OUT TITLE, DESCRIPTION AND LINK -->
 
 	<!-- ICONS ARE BUTTONS TO CONTROL VIEW -->
-	<div id="projectsTitle" class="text-center">Portfolio<i id="listView" class="fas fa-align-justify"></i><i id="blockView" class="d-none fas fa-clone"></i></div>
-	<div class="text-center small">Click image for more info</div>
+	<div id="portfolioTitle" class="text-center">Portfolio<i id="listViewButton" class="d-none fas fa-align-justify"></i><i id="carouselViewButton" class="fas fa-clone"></i>
+		<a class="anchor" id="portfolioLink"></a> <!-- link for nav -->
+	</div>
+	<div class="text-center small view-text">Click to go to app</div><div class="d-none text-center small view-text">Click for more info</div>
 	<!-- CAROUSEL VIEW -->
-	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	<div id="carouselView" class="carousel slide" data-ride="carousel"> <!-- carousel is hidden on mobile, will display on icon click -->
 	    <div class="carousel-inner">
 	    	<!-- wiki viewer -->
 		    <div class="carousel-item active">
@@ -91,11 +95,11 @@
 		    </div>
 	    </div>
 	    <!-- carousel controls -->
-	    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+	    <a class="carousel-control-prev" href="#carouselView" role="button" data-slide="prev">
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Previous</span>
 	    </a>
-	    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+	    <a class="carousel-control-next" href="#carouselView" role="button" data-slide="next">
 	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Next</span>
 	    </a>
@@ -104,7 +108,14 @@
 
 
     <!-- LIST VIEW -->
-
+    <div id="listView" class="mt-3">
+    	<ul class="list-group">
+    		<a href="https://codepen.io/cachin/full/yjZqpZ/" target="_blank" class="list-group-item list-group-item-action"><strong>Calculator</strong><br>A calculator with a random word button.</a>
+			<a href="https://codepen.io/cachin/full/XqErOP/" target="_blank" class="list-group-item list-group-item-action"><strong>Wiki Viewer</strong><br>Search for Wikipedia articles.</a>
+			<a href="https://codepen.io/cachin/full/qYYPRx/" target="_blank" class="list-group-item list-group-item-action"><strong>Twitch Viewer</strong><br>To see which of your favourite streamers are online.</a>
+			<a href="https://codepen.io/cachin/full/jxPjGy/" target="_blank" class="list-group-item list-group-item-action"><strong>Random Quote Machine</strong><br>Just in case you need a good quote.</a>
+		</ul>
+    </div>
 	<!-- END LIST VIEW -->
 
 
@@ -189,7 +200,7 @@
 	      	<div class="container-fluid">
 	      		<div class="row">
 	      			<div class="col">
-	      				<p class="text-center small">Just a regular ol' calculator, with a random word button.</p>
+	      				<p class="text-center small">A calculator with a random word button.</p>
 	      			</div>
 	      		</div>
 	      		<div class="row">
@@ -240,8 +251,11 @@
 	<!-- CONTACT -->
 	<div id="contactTitle" align="center">Contact</div>
 	<div id="contact" class="row shadow-lg bg-light mt-2">
+
+		<a class="anchor" id="contactLink"></a>
+
 		<div class="col-12 col-sm-6 mt-3" align="center">
-			<p class="lead mt-2"><strong>Email Me</strong></p>
+			<p class="mt-2"><strong>Email Me</strong></p>
 			<form>
 				<div class="form-group" align="left">
 					<label class="small" for="name">Name</label>
@@ -258,7 +272,7 @@
 		</div>
 
 		<div id="links" class="col-12 col-sm-4 offset-sm-1" align="center">
-			<p class="lead"><strong>Links</strong></p>
+			<p><strong>Links</strong></p>
 			<ul class="list-group">
 				<a href="" target="_blank" class="list-group-item list-group-item-action">Github</a>
 				<a href="" target="_blank" class="list-group-item list-group-item-action">Codepen</a>
@@ -277,7 +291,7 @@
 <div class="container"><br><br><br></div> <!-- to add some margin at bottom of page -->
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script src="./scripts/scripts.js"></script>
