@@ -41,12 +41,18 @@
 	<div id="aboutMeTitle" align="center">About Me</div>
 	<div class="row"> <!-- ABOUT ME -->
 		<div id="aboutMe" class="col p-3 shadow-lg">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>My name's Cameron Chin, and I live in Toronto, Ontario. I got into web development this year, and have loved it ever since. I'm fascinated by technology and I'm very passionate about programming. Though I am currently focusing on learning the front end and being able to provide good user interfaces, I 
+			will eventually move in to back end development.<br>
+			My skillset right now includes, but is not limited to:
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>Javascript</li>
+				<li>JQuery</li>
+				<li>Boostrap</li>
+			</ul><br>
+			I am driven by learning new things, and perfecting my code. One day I hope to be writing applications that will be used by millions of people all over the world!
+			</p>
 		</div>
 	</div> <!-- END ABOUT ME -->
 

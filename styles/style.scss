@@ -79,7 +79,7 @@ nav {
 // lists for list view and links
 .list-group-item {
 	background: $white;
-	transition: background 0.5s ease-in;
+	transition: background 0.3s;
 }
 .list-group-item:hover {
 	background: $blue;
