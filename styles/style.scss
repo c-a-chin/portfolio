@@ -1,4 +1,7 @@
 $font-stack: 'Montserrat', sans-serif;
+$beige: #C6AC8F;
+$white: #EBE9E9;
+$blue: #3581B8;
 
 // titles on page
 %title {
@@ -15,16 +18,22 @@ html {
 
 body {
 	font: 100% $font-stack;
-	background: #71C575;
+	background: $beige;
+	color: white;
+	position: relative; //for scrollspy
 }
 
 nav {
-	border-radius: 5px;
+	background: $white;
+	color: black;
 }
 .nav-link {
 	margin-left: auto;
+	color: black;
 }
 
+// anchor class/Link ids are for navigating on page
+// set them to be above element to account for fixed navbar (so navbar doesnt cover element when navigating to it)
 .anchor {
 	display: block;
 	position: relative;
@@ -38,23 +47,51 @@ nav {
 	top: -115px;
 }
 
-#aboutMe, #contact {
-	margin-top: 1rem;
-	border-radius: 5px;
-}
+
 
 #aboutMeTitle, #portfolioTitle, #contactTitle {
 	margin-top: 5rem;
 	@extend %title;
 }
 
+#aboutMe, #contact {
+	margin-top: 1rem;
+	border-radius: 5px;
+	background: $blue;
+}
 
 
+
+.carousel-control-next, .carousel-control-prev:hover {
+	cursor: pointer;
+}
+
+// modals for carousel images
+.modal-content {
+	background: $blue;
+}
+.img-in-modal {
+	border-radius: 5px;
+}
+
+
+
+// lists for list view and links
+.list-group-item {
+	background: $white;
+	transition: background 0.5s ease-in;
+}
+.list-group-item:hover {
+	background: $blue;
+	color: white;
+}
+
+// links in contact section
 #links {
 	margin-top: 2rem;
 }
 
-
+// icons on page are buttons to control carousel/list views
 i {
 	position: relative;
 	left: 25vw;
@@ -65,7 +102,10 @@ i {
 i:hover {
 	cursor: pointer;
 }
-// icon is for changing view of portfolio, has 4 breakpoints to line up with images under it
+// icon has 4 breakpoints to line up with width of carousel under it
+
+
+// MEDIA QUERIES
 @media (min-width: 576px) {
 	
 	%title {

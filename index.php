@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 <!-- NAVBAR -->
-<nav class="navbar fixed-top navbar-expand-sm shadow mx-3 navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-sm shadow navbar-light">
 
 	<!-- toggle button on navbar collapse -->
 	<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
 	<!-- nav items -->
 	<div class="collapse navbar-collapse justify-content-center" id="navbarContent">
 		<ul class="navbar-nav mx-auto">
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link" href="#aboutLink">Home</a>
 			</li>
 			<li class="nav-item">
@@ -40,7 +40,7 @@
 <div class="container">
 	<div id="aboutMeTitle" align="center">About Me</div>
 	<div class="row"> <!-- ABOUT ME -->
-		<div id="aboutMe" class="col p-3 shadow-lg bg-light">
+		<div id="aboutMe" class="col p-3 shadow-lg">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -61,12 +61,19 @@
 	<div id="portfolioTitle" class="text-center">Portfolio<i id="listViewButton" class="d-none fas fa-align-justify"></i><i id="carouselViewButton" class="fas fa-clone"></i>
 		<a class="anchor" id="portfolioLink"></a> <!-- link for nav -->
 	</div>
-	<div class="text-center small view-text">Click to go to app</div><div class="d-none text-center small view-text">Click for more info</div>
+	<div class="text-center small view-text">Click to go to app</div><div class="d-none text-center small view-text">Click image for more info</div>
 	<!-- CAROUSEL VIEW -->
 	<div id="carouselView" class="carousel slide" data-ride="carousel"> <!-- carousel is hidden on mobile, will display on icon click -->
 	    <div class="carousel-inner">
-	    	<!-- wiki viewer -->
+	    	<!-- calculator -->
 		    <div class="carousel-item active">
+		    	<a id="calculator" href="#" class="btn" data-toggle="modal" data-target="#modal-img-3">
+					<img class="img-fluid img-thumbnail shadow" src="./images/calculator.png">
+				</a>
+				<p class="small" align="center"><em>Calculator</em></p>
+		    </div>
+	    	<!-- wiki viewer -->
+		    <div class="carousel-item">
 		    	<a id="wikiViewer" href="#" class="btn" data-toggle="modal" data-target="#modal-img-1">
 					<img class="img-fluid img-thumbnail shadow" src="./images/wiki-viewer.png">
 				</a>
@@ -79,13 +86,6 @@
 				</a>
 				<p class="small" align="center"><em>Twitch Viewer</em></p>
 		    </div>
-		    <!-- calculator -->
-		    <div class="carousel-item">
-		    	<a id="calculator" href="#" class="btn" data-toggle="modal" data-target="#modal-img-3">
-					<img class="img-fluid img-thumbnail shadow" src="./images/calculator.png">
-				</a>
-				<p class="small" align="center"><em>Calculator</em></p>
-		    </div>
 		    <!-- random quote -->
 		    <div class="carousel-item">
 		    	<a id="randomQuote" href="#" class="btn" data-toggle="modal" data-target="#modal-img-4">
@@ -95,11 +95,11 @@
 		    </div>
 	    </div>
 	    <!-- carousel controls -->
-	    <a class="carousel-control-prev" href="#carouselView" role="button" data-slide="prev">
+	    <a class="carousel-control-prev" data-target="#carouselView" role="button" data-slide="prev">
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Previous</span>
 	    </a>
-	    <a class="carousel-control-next" href="#carouselView" role="button" data-slide="next">
+	    <a class="carousel-control-next" data-target="#carouselView" role="button" data-slide="next">
 	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Next</span>
 	    </a>
@@ -120,29 +120,29 @@
 
 
 	<!-- MODALS FOR IMGS -->
-	<!-- modal-img-1 for WIKI VIEWER -->
-	<div class="modal fade" id="modal-img-1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+	<!-- modal-img-1 for CALCULATOR -->
+	<div class="modal fade" id="modal-img-3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalLabel"><strong>Wiki Viewer</strong></h5>
+	        <h5 class="modal-title" id="modalLabel"><strong>Calculator</strong></h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <img class="img-fluid" src="./images/wiki-viewer.png">
+	        <img class="img-fluid img-in-modal" src="./images/calculator.png">
 	      </div>
 	      <div class="modal-footer">
 	      	<div class="container-fluid">
 	      		<div class="row">
 	      			<div class="col">
-	      				<p class="text-center small">Search for Wikipedia articles.</p>
+	      				<p class="text-center small">A calculator with a random word button.</p>
 	      			</div>
 	      		</div>
 	      		<div class="row">
 	      			<div class="col d-flex">
-	      				<a class="btn-block btn btn-outline-dark" href="https://codepen.io/cachin/full/XqErOP/" target="_blank">Go To App</a>
+	      				<a class="btn-block btn btn-outline-light" href="https://codepen.io/cachin/full/yjZqpZ/" target="_blank">Go To App</a>
 	      			</div>
 	      		</div>
 	      	</div>
@@ -162,7 +162,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <img class="img-fluid" src="./images/twitch-viewer.png">
+	        <img class="img-fluid img-in-modal" src="./images/twitch-viewer.png">
 	      </div>
 	      <div class="modal-footer">
 	      	<div class="container-fluid">
@@ -173,39 +173,37 @@
 	      		</div>
 	      		<div class="row">
 	      			<div class="col d-flex">
-	      				<a class="btn-block btn btn-outline-dark" href="https://codepen.io/cachin/full/qYYPRx/" target="_blank">Go To App</a>
+	      				<a class="btn-block btn btn-outline-light" href="https://codepen.io/cachin/full/qYYPRx/" target="_blank">Go To App</a>
 	      			</div>
-	      			
 	      		</div>
 	      	</div>
-
 	      </div>
 	    </div>
 	  </div>
 	</div>
-	<!-- modal-img-3 for CALCULATOR -->
-	<div class="modal fade" id="modal-img-3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+	<!-- modal-img-3 for WIKI VIEWER -->
+	<div class="modal fade" id="modal-img-1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalLabel"><strong>Calculator</strong></h5>
+	        <h5 class="modal-title" id="modalLabel"><strong>Wiki Viewer</strong></h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <img class="img-fluid" src="./images/calculator.png">
+	        <img class="img-fluid img-in-modal" src="./images/wiki-viewer.png">
 	      </div>
 	      <div class="modal-footer">
 	      	<div class="container-fluid">
 	      		<div class="row">
 	      			<div class="col">
-	      				<p class="text-center small">A calculator with a random word button.</p>
+	      				<p class="text-center small">Search for Wikipedia articles.</p>
 	      			</div>
 	      		</div>
 	      		<div class="row">
 	      			<div class="col d-flex">
-	      				<a class="btn-block btn btn-outline-dark" href="https://codepen.io/cachin/full/yjZqpZ/" target="_blank">Go To App</a>
+	      				<a class="btn-block btn btn-outline-light" href="https://codepen.io/cachin/full/XqErOP/" target="_blank">Go To App</a>
 	      			</div>
 	      		</div>
 	      	</div>
@@ -225,7 +223,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <img class="img-fluid" src="./images/random-quote.png">
+	        <img class="img-fluid img-in-modal" src="./images/random-quote.png">
 	      </div>
 	      <div class="modal-footer">
 	      	<div class="container-fluid">
@@ -236,7 +234,7 @@
 	      		</div>
 	      		<div class="row">
 	      			<div class="col d-flex">
-	      				<a class="btn-block btn btn-outline-dark" href="https://codepen.io/cachin/full/jxPjGy/" target="_blank">Go To App</a>
+	      				<a class="btn-block btn btn-outline-light" href="https://codepen.io/cachin/full/jxPjGy/" target="_blank">Go To App</a>
 	      			</div>
 	      		</div>
 	      	</div>
@@ -253,7 +251,7 @@
 
 	<!-- CONTACT -->
 	<div id="contactTitle" align="center">Contact</div>
-	<div id="contact" class="row shadow-lg bg-light mt-2">
+	<div id="contact" class="row shadow-lg mt-2">
 
 		<a class="anchor" id="contactLink"></a>
 		<!-- on form submit, jquery sends data to email-form.php -->
@@ -262,14 +260,14 @@
 			<form action="./index.php#formMessage" method="post" id="email-form">
 				<div class="form-group" align="left">
 					<label class="small" for="name">Name</label>
-					<input type="text" class="form-control" placeholder="Enter Name" name="name"><br>
+					<input type="text" class="form-control" placeholder="Enter Name" name="name" required><br>
 					<label class="small" for="email">Email</label>
-					<input type="email" class="form-control" placeholder="Enter Email" name="email"><br>
+					<input type="email" class="form-control" placeholder="Enter Email" name="email" required><br>
 					<label class="small" for="subject">Subject</label>
 					<input type="text" class="form-control" placeholder="Enter Subject" name="subject"><br>
 					<label class="small" for="message">Message</label>
-					<textarea class="form-control" name="message" rows="5"></textarea>
-					<div class="text-center"><button type="submit" name="submit" class="btn btn-outline-dark mt-3">Send</button></div>
+					<textarea class="form-control" name="message" rows="5" required></textarea>
+					<div class="text-center"><button type="submit" name="submit" class="btn btn-outline-light mt-3">Send</button></div>
 				</div>
 			</form><br>
 			<span id="formMessage">
@@ -309,7 +307,7 @@
 				<a href="https://github.com/c-a-chin" target="_blank" class="list-group-item list-group-item-action">Github</a>
 				<a href="https://codepen.io/cachin/" target="_blank" class="list-group-item list-group-item-action">Codepen</a>
 				<a href="https://www.linkedin.com/in/cameron-chin-b0098b161/" target="_blank" class="list-group-item list-group-item-action">LinkedIn</a>
-			</ul>
+			</ul><br><br>
 		</div>
 	</div> 
 	<!-- END CONTACT -->
