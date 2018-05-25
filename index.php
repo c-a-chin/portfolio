@@ -248,39 +248,73 @@
 	<!-- END PORTFOLIO -->
 
 
+
+
+
 	<!-- CONTACT -->
 	<div id="contactTitle" align="center">Contact</div>
 	<div id="contact" class="row shadow-lg bg-light mt-2">
 
 		<a class="anchor" id="contactLink"></a>
-
+		<!-- on form submit, jquery sends data to email-form.php -->
 		<div class="col-12 col-sm-6 mt-3" align="center">
 			<p class="mt-2"><strong>Email Me</strong></p>
-			<form>
+			<form action="./index.php#formMessage" method="post" id="email-form">
 				<div class="form-group" align="left">
 					<label class="small" for="name">Name</label>
-					<input type="text" class="form-control" id="name" placeholder="Enter Name"><br>
+					<input type="text" class="form-control" placeholder="Enter Name" name="name"><br>
 					<label class="small" for="email">Email</label>
-					<input type="email" class="form-control" id="email" placeholder="Enter Email"><br>
+					<input type="email" class="form-control" placeholder="Enter Email" name="email"><br>
 					<label class="small" for="subject">Subject</label>
-					<input type="text" class="form-control" id="subject" placeholder="Enter Subject"><br>
+					<input type="text" class="form-control" placeholder="Enter Subject" name="subject"><br>
 					<label class="small" for="message">Message</label>
-					<textarea id="message" class="form-control" rows="5"></textarea>
-					<div class="text-center"><button type="submit" class="btn btn-outline-dark mt-3 ">Send</div>
+					<textarea class="form-control" name="message" rows="5"></textarea>
+					<div class="text-center"><button type="submit" name="submit" class="btn btn-outline-dark mt-3">Send</button></div>
 				</div>
-			</form>
+			</form><br>
+			<span id="formMessage">
+				
+			<!-- PHP FOR CONTACT FORM, when email is sent, php echoes success message inside this span -->
+			<?php 
+
+			if(isset($_POST["name"]) &&
+			   isset($_POST["email"]) &&
+			   isset($_POST["message"])){
+
+				$to = 'cameron.a.chin@gmail.com';
+				$subject = 'New message from portfolio!';
+				$name = $_POST['name'];
+				$email = $_POST['email'];
+				$message = 'New message from ' . $name . ', ' . $email . '\n';
+				// if subject is set -> add to message, else -> leave it out
+				if(isset($_POST['subject'])){
+					$optional_subject = $_POST['subject'];
+					$message .= $optional_subject . '\n';
+				} else {
+					$message .= $_POST['message'];
+				}
+				// send mail!
+				mail($to, $subject, $message);
+				echo "Thank you for your message, I'll get back to you as soon as I can!";
+			}
+
+			?>
+
+			</span>
 		</div>
 
 		<div id="links" class="col-12 col-sm-4 offset-sm-1" align="center">
 			<p><strong>Links</strong></p>
 			<ul class="list-group">
-				<a href="" target="_blank" class="list-group-item list-group-item-action">Github</a>
-				<a href="" target="_blank" class="list-group-item list-group-item-action">Codepen</a>
-				<a href="" target="_blank" class="list-group-item list-group-item-action">Stack Overflow</a>
+				<a href="https://github.com/c-a-chin" target="_blank" class="list-group-item list-group-item-action">Github</a>
+				<a href="https://codepen.io/cachin/" target="_blank" class="list-group-item list-group-item-action">Codepen</a>
+				<a href="https://www.linkedin.com/in/cameron-chin-b0098b161/" target="_blank" class="list-group-item list-group-item-action">LinkedIn</a>
 			</ul>
 		</div>
 	</div> 
 	<!-- END CONTACT -->
+
+
 
 
 
